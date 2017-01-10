@@ -100,4 +100,4 @@ def text():
             print (conditional(suborob(noun(), adjective(), pronoun()), verb(), suborob(noun(), adjective(), pronoun()), suborob(noun(), adjective(), pronoun()), verb(), suborob(noun(), adjective(), pronoun())))
             
 text()
-file.close
+file.close()
