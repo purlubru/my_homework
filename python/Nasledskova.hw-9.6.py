@@ -17,6 +17,7 @@ def findverbs (file):
 
 f = open ('file_9.6.txt', 'r', encoding = 'utf8')
 file = f.read()
+f.close()
 file = pointsaway(file)
 verbs = findverbs(file)
 print (verbs)
