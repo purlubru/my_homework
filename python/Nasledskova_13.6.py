@@ -3,12 +3,12 @@ import os
 def names(array):
     names = []
     for name in array:
-        if not os.path.isdir(name):
+        if os.path.isfile(name):
             names.append(name)
     return names
 
 def haspoints(array):
-    points = '.,!_-'
+    points = ',!_-'
     s = 0
     su = 0
     for name in array:
@@ -18,12 +18,11 @@ def haspoints(array):
         if s > 0:
             su += 1
         s = 0
-
     print ("Знаки препинания есть в названии такого количества файлов: ", su)
 
 def main():
     files = names (os.listdir('.'))
-    print (files)
+    print (os.listdir('.'))
     haspoints (files)
 
 main()
