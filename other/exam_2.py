@@ -3,12 +3,15 @@ import re
 def find_and_count (file):
     pos = {}
     for word in file:
-        result = re.search('.*?gr="(\w+)', word) #программа смотрит только первый разбор, а надо смотреть все
-        if result:
-            if result.group(1) not in pos:
-                pos[result.group(1)] = 1
-            else:
-                pos[result.group(1)] += 1
+        word = word.split('<')
+        for part in word:
+            result = re.search('.*?gr="(\w+)', part) #программа смотрит только первый разбор, а надо смотреть все
+            if result:
+                print (result.group(1))
+                if result.group(1) not in pos:
+                    pos[result.group(1)] = 1
+                else:
+                    pos[result.group(1)] += 1
     return pos
 
 def newfile (dic):
